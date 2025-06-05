@@ -5,6 +5,10 @@ import cv2 as cv
 import config
 import functions
 
+def on_complete(img_rectified):
+    cv.imwrite(config.output_path, img_rectified)
+    config.root.destroy()
+
 # Tkinter 윈도우 초기화
 root = tk.Tk()
 root.title("Perspective Correction (Click 4 corners)")
@@ -29,8 +33,8 @@ vbar.pack(side="right", fill="y")
 canvas.config(xscrollcommand=hbar.set, yscrollcommand=vbar.set)
 
 # 이벤트 및 이미지 표시
-canvas.bind("<Button-1>", functions.on_click)
-canvas.bind("<Button-3>", functions.on_click)
+canvas.bind("<Button-1>", functions.get_on_click(on_complete))
+canvas.bind("<Button-3>", functions.get_on_click(on_complete))
 canvas.create_image(0, 0, anchor="nw", image=photo)
 
 functions.draw_hint()

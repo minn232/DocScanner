@@ -1,12 +1,9 @@
 # config.py
 
-SELECTED_SIZE = "A4"
-# 선택지: "A4", "B4", "A3", "Letter", "Legal"
-
 img_file = 'inputImg.jpg'
 output_path = "output_rectified.jpg"
-
-
+SELECTED_SIZE = "A4"
+# 선택지: "A4", "B4", "A3", "Letter", "Legal"
 
 PAPER_SIZES_MM = {
     "A4": (210, 297),
