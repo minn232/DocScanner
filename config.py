@@ -1,7 +1,6 @@
-# config.py
 
-img_file = 'inputImg.jpg'
-output_path = "output_rectified.jpg"
+img_file = '../inputImg.jpg'
+output_path = "../outputImg.jpg"
 SELECTED_SIZE = "A4"
 # 선택지: "A4", "B4", "A3", "Letter", "Legal"
 
@@ -21,16 +20,14 @@ PAPER_SIZES_PX = {
     for name, (w_mm, h_mm) in PAPER_SIZES_MM.items()
 }
 
-card_size = PAPER_SIZES_PX[SELECTED_SIZE]  # 실제로 사용되는 픽셀 크기
+doc_size = PAPER_SIZES_PX[SELECTED_SIZE]
 
 hint_labels = ["좌상단", "우상단", "좌하단", "우하단"]
 hint_radius = 8
 
-# 전역 리스트 (상태 추적용)
+
 points = []
 dots = []
-
-# canvas와 img는 main에서 import 후 전달
 canvas = None
 img = None
 root = None
